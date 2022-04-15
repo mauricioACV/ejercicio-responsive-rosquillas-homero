@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+
+  <style>
+    body {
+      position: relative;
+    }
+
+    /* Podemos aplicar la misma regla CSS a varios selectores
+    separandolos por coma */
+    #homero-1,
+    #homero-2,
+    #homero-3,
+    #homero-4,
+    #homero-5,
+    #homero-6 {
+      /* Esta propiedad oculta un elemento HTML, y con
+      visibility: visible se vuelve a mostrar */
+      visibility: hidden;
+      /* Hemos posicionado absolutamente todas las imágenes
+      para asi mostrarlas todas en el mismo lugar */
+      position: absolute;
+
+      /* TIP: crea tus media queries de forma que verifiquen
+      un rango entre 2 anchos del viewport, por ejemplo, entre 800px y 700px
+      se deberá mostrar la imagen 1.png, luego de 700px a 600px mostrar
+      la imagen 2.png, y asi sucesivamente.*/
+
+      /* TIP: la sintaxis para escribir una media query entre dos puntos del ancho
+      del viweport es
+
+      @media only screen and (min-width: 500px) and (max-width: 600px) {
+        Aqui adentro podras escribir y sobre escribir selectores
+      }
+       */
+    }
+
+    @media screen and (max-width: 1500px) {
+      #homero-1 {
+        visibility: visible;
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+      #homero-2 {
+        visibility: visible;
+      }
+
+      #homero-1 {
+        visibility: hidden;
+      }
+    }
+
+    @media screen and (max-width: 800px) {
+      #homero-3 {
+        visibility: visible;
+      }
+
+      #homero-2 {
+        visibility: hidden;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      #homero-4 {
+        visibility: visible;
+      }
+
+      #homero-3 {
+        visibility: hidden;
+      }
+    }
+
+    @media screen and (max-width: 500px) {
+      #homero-5 {
+        visibility: visible;
+      }
+
+      #homero-4 {
+        visibility: hidden;
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      #homero-6 {
+        visibility: visible;
+      }
+
+      #homero-5 {
+        visibility: hidden;
+      }
+    }
+  </style>
+
+  <body>
+    <img id="homero-1" src="./homero/1.png" alt="" />
+    <img id="homero-2" src="./homero/2.png" alt="" />
+    <img id="homero-3" src="./homero/3.png" alt="" />
+    <img id="homero-4" src="./homero/4.png" alt="" />
+    <img id="homero-5" src="./homero/5.png" alt="" />
+    <img id="homero-6" src="./homero/6.png" alt="" />
+  </body>
+</html>
